@@ -1,0 +1,36 @@
+div.title-block {
+    background: skyblue;
+    text-align: center;
+}
+
+td.image {
+    border-color: black;
+    border-width: 5px;
+}
+
+table {
+    padding: 10px;
+    background-color: black;
+}
+
+td {
+    padding-right: 20px;
+}
+
+h2 {
+    color : gray;
+}
+ul {
+    font-size: smaller;
+    color: white;
+}
+
+ol {
+    font-family: Bahnschrift;
+    color : brown;
+}
+
+a:hover {
+    font-size: large;
+    color : red;
+}
