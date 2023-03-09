@@ -11,6 +11,11 @@ def open_page(context):
     context.driver.get('https://www.amazon.com')
 
 
+@given('Navigate to product page: {url}')
+def open_prod(context, url):
+    context.driver.get(url)
+
+
 @when('Main page product link is clicked')
 def open_product(context):
     pics = context.driver.find_elements(*MAIN_PIC)
