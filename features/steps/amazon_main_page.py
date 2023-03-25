@@ -1,14 +1,14 @@
-import random
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 
 
-MAIN_PIC = (By.CSS_SELECTOR, 'div.fluid-image-container')
+
+
 
 
 @given('Open Amazon page')
 def open_page(context):
-    context.driver.get('https://www.amazon.com')
+    context.app.main_page.open_main()
 
 
 @given('Navigate to product page: {url}')
@@ -18,12 +18,17 @@ def open_prod(context, url):
 
 @when('Main page product link is clicked')
 def open_product(context):
-    pics = context.driver.find_elements(*MAIN_PIC)
-    pic_count = len(pics)
-    print(pic_count)
-    random.choice(pics).click()
+    context.app.main_page.click_prod_group()
 
 
+@when('Click on returns & orders')
+def click_orders(context):
+    context.app.main_page.orders_click()
+
+
+@when('Click cart icon')
+def click_cart(context):
+    context.app.main_page.cart_click()
 
 
 

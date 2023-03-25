@@ -2,14 +2,15 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 
 
-ATC_BUTTON = (By.CSS_SELECTOR, '#add-to-cart-button')
+
 PROD_COLORS = (By.CSS_SELECTOR, 'li[id*=color_name]')
 COLOR_FIELD = (By.CSS_SELECTOR, 'span.selection')
 
 
 @when('Product is added to cart')
 def prod_atc(context):
-    context.driver.find_element(*ATC_BUTTON).click()
+    context.app.prod_page.add_to_cart()
+    context.app.prod_page.no_coverage()
 
 
 @then('Verify color is correct for first 5 products')
