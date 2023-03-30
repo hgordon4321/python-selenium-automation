@@ -4,7 +4,7 @@ from time import sleep
 from selenium.webdriver.support import expected_conditions as EC
 
 SEARCH_INPUT = (By.NAME, 'q')
-SEARCH_SUBMIT = (By.NAME, 'btnK')
+SEARCH_SUBMIT = (By.ID, 'nav-search-submit-button')
 
 
 @given('Open Google page')

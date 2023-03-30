@@ -31,6 +31,14 @@ def click_cart(context):
     context.app.main_page.cart_click()
 
 
+@when('Filter search to {category}')
+def filter_search(context, category):
+    context.app.main_page.filter_search(category)
+
+
+@when('Enter {item} in search box')
+def enter_search_text(context, item):
+    context.app.main_page.enter_search_text(item)
 
 
 
