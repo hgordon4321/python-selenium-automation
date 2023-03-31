@@ -9,12 +9,13 @@ def sel_prod(context):
 
 @then('Store name of product number {num}')
 def store_prod(context, num):
+    title = context.app.prod_search.get_prod_name(int(num))
     try:
-        context.prods.append(context.app.prod_search.get_prod_name(int(num)))
+        context.prods.append(title)
     except AttributeError:
         context.prods = []
-        context.prods.append(context.app.prod_search.get_prod_name(int(num)))
-    print(context.prods)
+        context.prods.append(title)
+
 
 @then('Verify product names are different')
 def prod_name_check(context):
